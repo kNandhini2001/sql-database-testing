@@ -1,0 +1,4 @@
+CREATE TABLE customers (customer_id NUMBER PRIMARY KEY, customer_name VARCHAR2(60) NOT NULL, email VARCHAR2(100) UNIQUE NOT NULL, city VARCHAR2(40));
+CREATE TABLE products (product_id NUMBER PRIMARY KEY, product_name VARCHAR2(60) NOT NULL, price NUMBER(10,2) NOT NULL CHECK (price > 0), stock NUMBER NOT NULL CHECK (stock >= 0));
+CREATE TABLE orders (order_id NUMBER PRIMARY KEY, customer_id NUMBER NOT NULL REFERENCES customers(customer_id), order_date DATE NOT NULL, status VARCHAR2(20) NOT NULL CHECK (status IN ('PLACED','DELIVERED','CANCELLED')));
+CREATE TABLE order_items (order_id NUMBER REFERENCES orders(order_id), product_id NUMBER REFERENCES products(product_id), quantity NUMBER NOT NULL CHECK (quantity > 0), unit_price NUMBER(10,2) NOT NULL CHECK (unit_price > 0), PRIMARY KEY (order_id, product_id));

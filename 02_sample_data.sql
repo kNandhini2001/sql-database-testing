@@ -1,0 +1,14 @@
+INSERT INTO customers VALUES (1,'Asha','asha@example.com','Chennai');
+INSERT INTO customers VALUES (2,'Ravi','ravi@example.com','Bengaluru');
+INSERT INTO customers VALUES (3,'Meera','meera@example.com','Chennai');
+INSERT INTO products VALUES (10,'Keyboard',1000,5);
+INSERT INTO products VALUES (20,'Mouse',500,10);
+INSERT INTO products VALUES (30,'Monitor',8000,0);
+INSERT INTO orders VALUES (101,1,DATE '2026-01-01','DELIVERED');
+INSERT INTO orders VALUES (102,1,DATE '2026-01-02','PLACED');
+INSERT INTO orders VALUES (103,2,DATE '2026-01-03','CANCELLED');
+INSERT INTO order_items VALUES (101,10,1,1000);
+INSERT INTO order_items VALUES (101,20,2,500);
+INSERT INTO order_items VALUES (102,20,1,500);
+INSERT INTO order_items VALUES (103,30,1,8000);
+COMMIT;
